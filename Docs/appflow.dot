@@ -1,0 +1,54 @@
+digraph AppFlow {
+    rankdir=LR;
+    node [shape=rectangle, style=rounded, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=8];
+
+    // Start Node
+    Start [label="Start Application", shape=ellipse, style="bold"];
+    
+    // Dashboard
+    Dashboard [label="Dashboard\n- View Top Gainers\n- Summary of Active Strategies\n- Performance Metrics"];
+
+    // Top Gainers Flow
+    FetchData [label="Fetch Top Gainers (>5%)\nvia Market API", shape=rectangle];
+    DisplayGainers [label="Display Top Gainers on Dashboard", shape=rectangle];
+
+    // Strategy Setup
+    SetupStrategy [label="Setup Strategy\n- Select Stocks\n- Configure Parameters\n(Stop-loss, Profit Target, Time Horizon)"];
+    SaveStrategy [label="Save Strategy Configuration\nto Database", shape=rectangle];
+
+    // Manual Trade Execution
+    TradeSetup [label="Generate Trade Setup Report\n(PDF/CSV)"];
+    UserExecutesTrade [label="User Executes Trade in IBKR", shape=parallelogram];
+
+    // Monitoring
+    MonitorStrategies [label="Monitor Strategies\n- Fetch Real-Time Data\n- Update Status (Active, Closed, Expired)"];
+    DisplayMonitoring [label="Display Strategy Updates\nand P/L Metrics"];
+
+    // Reporting
+    ViewReports [label="Generate Reports\n- Historical Performance\n- Strategy Metrics\n- Visualization (Graphs/Tables)"];
+    ExportReports [label="Export Reports\n(PDF/Excel)"];
+
+    // Error Handling
+    APIError [label="API Error\n- Retry Mechanism\n- Notify User", shape=diamond];
+    InputError [label="Input Validation Error\n- Prompt User to Correct", shape=diamond];
+
+    // Connections
+    Start -> Dashboard;
+    Dashboard -> FetchData [label="Daily Trigger"];
+    FetchData -> DisplayGainers;
+    Dashboard -> SetupStrategy [label="User Action"];
+    SetupStrategy -> SaveStrategy;
+    SaveStrategy -> TradeSetup [label="User Action"];
+    TradeSetup -> UserExecutesTrade;
+    Dashboard -> MonitorStrategies [label="User Action"];
+    MonitorStrategies -> DisplayMonitoring;
+    Dashboard -> ViewReports [label="User Action"];
+    ViewReports -> ExportReports;
+
+    // Error Handling Connections
+    FetchData -> APIError [label="Error"];
+    APIError -> FetchData [label="Retry"];
+    SetupStrategy -> InputError [label="Invalid Inputs"];
+    InputError -> SetupStrategy [label="Retry"];
+}
