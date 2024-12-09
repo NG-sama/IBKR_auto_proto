@@ -1,20 +1,26 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+yarn.lock
+package-lock.json
 
 # testing
 /coverage
+/.nyc_output
 
 # next.js
 /.next/
 /out/
+.next/
+.swc/
 
 # production
 /build
+dist/
 
 # misc
 .DS_Store
@@ -22,8 +28,13 @@
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+._*
+.Spotlight-V100
+.Trashes
 
-# debug
+# debug logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -31,64 +42,32 @@ yarn-error.log*
 lerna-debug.log*
 
 # local env files
-.env
-.env*.local
-.env.development
-.env.test
-.env.production
-.env.staging
+.env*
+!.env.example
+*.env.docker
 
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# IDE - VSCode
+# IDE
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-# IDE - IntelliJ
 .idea/
 *.iml
 *.iws
 *.ipr
+.vscode-test
 
-# IDE - WebStorm
-.idea/
-*.iml
-*.iws
-
-# Logs
-logs
-*.log
-
-# Operating System
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-
-# Optional npm cache directory
+# cache
+.cache/
+.webpack/
 .npm
-
-# Optional eslint cache
 .eslintcache
-
-# Optional stylelint cache
 .stylelintcache
 
-# dotenv environment variable files
-.env*
-!.env.example
-
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
+# build tools
+.turbo
+storybook-static/
 
 # yarn v2
 .yarn/cache
@@ -97,34 +76,23 @@ logs
 .yarn/install-state.gz
 .pnp.*
 
-# Supabase
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# vercel
+.vercel
+
+# supabase
 supabase/.branches/
 supabase/.temp/
 .supabase/
 
-# Docker
+# docker
 docker-compose.override.yml
-*.env.docker
 .docker/
 
-# Testing
-/coverage
-/.nyc_output
-
-# Turborepo
-.turbo
-
-# Storybook
-storybook-static/
-
-# Cache
-.cache/
-.webpack/
-.next/
-.swc/
-
-# Python stuff (keeping from your existing file)
-**pycache**/
+# python
+__pycache__/
 *.py[cod]
 *$py.class
-[Your existing Python-related ignores...]
