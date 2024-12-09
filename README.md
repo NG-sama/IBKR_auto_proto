@@ -10,7 +10,7 @@ A modern web application template demonstrating frontend development fundamental
 
 This project follows a structured development approach influenced by modern AI-assisted development practices:
 
-### 1. Research Phase (Using ChatGPT O1 Preview)
+### 1. Research Phase (Using [ChatGPT O1 Preview](https://chatgpt.com))
 Inspired by [CJ Vinay's AI Development Workflow](https://x.com/cj_zZZz/status/1855275550547521956), our research phase involves:
 - Define core functionality: "I want to build a software that does x,y,z"
 - Generate Project Requirements Document (PRD)
@@ -18,7 +18,7 @@ Inspired by [CJ Vinay's AI Development Workflow](https://x.com/cj_zZZz/status/18
 - Document functionality specifications
 - Develop application flow documentation
 
-### 2. Design Phase (Using V0 by Vercel)
+### 2. Design Phase (Using [V0 by Vercel](https://v0.dev/))
 Following the workflow:
 - Create new project structure
 - Upload PRD, page layouts, and app flow docs
