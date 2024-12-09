@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - ../my-app/.env.local
+    networks:
+      - ibkr-network
+
+networks:
+  ibkr-network:
+    driver: bridge

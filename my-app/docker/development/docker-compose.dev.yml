@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ../../IBKR_auto_proto/my-app  # Updated path
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../../my-app:/app   # Updated path
+      - /app/node_modules
+      - /app/.next
+    env_file:
+      - ../my-app/.env.local
+    command: npm run dev
+    networks:
+      - ibkr-network

@@ -105,6 +105,7 @@ supabase/.temp/
 # Docker
 docker-compose.override.yml
 *.env.docker
+.docker/
 
 # Testing
 /coverage
