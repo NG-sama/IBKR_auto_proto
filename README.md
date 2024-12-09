@@ -1,27 +1,59 @@
 # Next.js Trading Platform Template
 
-A modern, full-stack web application template demonstrating how to build powerful trading platforms using Next.js 14, React, and Supabase. This project showcases integration with Interactive Brokers (IBKR) as an example, but the architecture can be adapted for any trading platform or financial service.
+A modern web application template demonstrating frontend development fundamentals using Next.js 14, TypeScript, and Supabase authentication. This project serves as an educational resource for developers learning to build full-stack web applications with a focus on trading platform interfaces.
 
-## Overview
+## Quick Links
+- For detailed setup instructions, refer to [my-app/README.md](./my-app/README.md)
+- For development methodology and architectural decisions, see the [docs/](./docs/) folder
 
-This template demonstrates how to build a professional-grade trading platform frontend with features commonly needed in fintech applications. Interactive Brokers (IBKR) is used as an example integration, but the architecture is designed to be adaptable to any trading API or financial service.
+## Development Philosophy
 
-## Key Technologies
+This project follows a structured development approach influenced by modern AI-assisted development practices:
 
-- **Frontend**: Next.js 14, React, TailwindCSS
-- **Authentication**: Supabase Auth
-- **Styling**: Tailwind CSS with shadcn/ui components
-- **State Management**: React Hooks
-- **Data Visualization**: Recharts, Chart.js
-- **Type Safety**: TypeScript
+### 1. Research Phase
+- Utilize ChatGPT GPT-4 for:
+  - Deep research into trading platforms
+  - Initial documentation preparation
+  - Application layout planning
+  - Understanding best practices
+
+### 2. Design Phase
+- Use tools like V0.dev for frontend prototyping:
+  - Screen layouts and user flows
+  - Component design
+  - Interactive effects
+  - UI/UX integration
+
+### 3. Structure Phase
+- Engage Claude for:
+  - Project structure organization
+  - Folder hierarchy setup
+  - Documentation integration
+  - Architecture planning
+
+### 4. Implementation Phase
+- Iterative development focusing on:
+  - Strategy management implementation
+  - Performance monitoring systems
+  - User authentication flows
+  - API integration
+  - Manual code refinement and testing
+
+## Core Technologies
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Authentication**: Supabase
+- **Styling**: Tailwind CSS, shadcn/ui
 - **Development**: Docker
+- **State Management**: React Hooks
 
 ## Project Structure
 
 ```
 IBKR_auto_proto/
 ├── my-app/           # Next.js web application
-├── Docs/            # Project documentation and examples
+├── docs/            # Project documentation and examples
 └── README.md        # This file
 ```
 
@@ -30,99 +62,67 @@ IBKR_auto_proto/
 - 🔒 **Authentication System**
   - Protected routes
   - Session management
-  - Role-based access control
+  - Supabase integration
 
-- 🎯 **Trading Interface**
+- 📊 **Trading Interface**
   - Strategy management dashboard
   - Performance monitoring
-  - Trade execution interface
-  - Real-time updates
-
-- 📊 **Data Visualization**
-  - Performance charts
-  - Trading analytics
-  - Portfolio overview
-  - Custom chart components
+  - Basic trade tracking
 
 - 🎨 **Modern UI/UX**
   - Responsive design
-  - Dark/light mode
   - Accessible components
   - Interactive dashboards
 
-## Getting Started
+## Quick Start
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/IBKR_auto_proto.git
-cd IBKR_auto_proto
+git clone <repository-url>
 ```
 
-2. Copy environment template:
+2. Navigate to the application directory:
 ```bash
-cp my-app/.env.example my-app/.env.local
+cd my-app
 ```
 
-3. Configure environment variables:
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
-```
+3. Follow the detailed setup instructions in [my-app/README.md](./my-app/README.md)
 
-4. Run with Docker:
-```bash
-docker-compose up --build
-```
+## Learning Path
 
-Access the application at `http://localhost:3000`
-
-## Development Guide
-
-See [my-app/README.md](./my-app/README.md) for detailed development instructions.
+This template demonstrates several key patterns:
+- Next.js 14 app router implementation
+- TypeScript integration in React
+- Authentication flow with Supabase
+- Protected route patterns
+- React component organization
+- State management with hooks
+- Modern UI development practices
 
 ## Documentation
 
-The [Docs](./Docs) directory contains:
-- System architecture and design patterns
-- Implementation examples
-- Component templates
-- Integration guides
-- Example use cases
-
-## Learning Resources
-
-This template demonstrates several key Next.js and React patterns:
-- Route groups and layouts
-- Server and client components
-- Authentication patterns
-- Protected routes
-- API route handlers
-- Data fetching strategies
-- Component composition
-- State management
-- Form handling
-- Real-time updates
-
-## Customization
-
-The template is designed to be customizable:
-- Swap IBKR integration for other trading platforms
-- Modify the UI components
-- Add new features
-- Extend the authentication system
-- Customize the trading interface
+The [docs/](./docs/) directory contains:
+- Development methodology
+- System architecture
+- Implementation guides
+- Design decisions
+- Learning resources
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions that improve the educational value of this template are welcome. Please submit pull requests with clear descriptions.
 
 ## License
 
-[MIT License](LICENSE)
+MIT License - See LICENSE file for details
 
 ## Support
 
-For questions and support:
-1. Check the documentation in the Docs folder
-2. Create an issue in the repository
-3. Refer to implementation examples
+For development support:
+1. Check the documentation in the docs folder
+2. Review the setup guide in my-app/README.md
+3. Create an issue in the repository
+
+---
+
+⭐ Star this repository if you find it helpful!
