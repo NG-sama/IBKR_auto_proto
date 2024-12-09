@@ -10,22 +10,24 @@ A modern web application template demonstrating frontend development fundamental
 
 This project follows a structured development approach influenced by modern AI-assisted development practices:
 
-### 1. Research Phase
-- Utilize ChatGPT GPT-4 for:
-  - Deep research into trading platforms
-  - Initial documentation preparation
-  - Application layout planning
-  - Understanding best practices
+### 1. Research Phase (Using ChatGPT O1 Preview)
+Inspired by [CJ Vinay's AI Development Workflow](https://x.com/cj_zZZz/status/1855275550547521956), our research phase involves:
+- Define core functionality: "I want to build a software that does x,y,z"
+- Generate Project Requirements Document (PRD)
+- Create dashboard and page layouts
+- Document functionality specifications
+- Develop application flow documentation
 
-### 2. Design Phase
-- Use tools like V0.dev for frontend prototyping:
-  - Screen layouts and user flows
-  - Component design
-  - Interactive effects
-  - UI/UX integration
+### 2. Design Phase (Using V0 by Vercel)
+Following the workflow:
+- Create new project structure
+- Upload PRD, page layouts, and app flow docs
+- Implement dashboard page design
+- Code and save all page components
+- Iterate on UI/UX elements
 
 ### 3. Structure Phase
-- Engage Claude for:
+- Engage [Claude](https://claude.ai/) for:
   - Project structure organization
   - Folder hierarchy setup
   - Documentation integration
@@ -78,7 +80,7 @@ IBKR_auto_proto/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/NG-sama/IBKR_auto_proto.git
 ```
 
 2. Navigate to the application directory:
@@ -126,3 +128,4 @@ For development support:
 ---
 
 ⭐ Star this repository if you find it helpful!
+
