@@ -6,10 +6,10 @@ import PerformanceMetrics from '@/components/performance/PerformanceMetrics'
 import PerformanceCharts from '@/components/performance/PerformanceCharts'
 import StrategyDetailsTable from '@/components/performance/StrategyDetailsTable'
 import PerformanceFilters from '@/components/performance/PerformanceFilters'
-import StrategyDetailsPopup from '@/components/performance/StrategyDetailsPopup'
+import StrategyDetailsPopup, { type Strategy } from '@/components/performance/StrategyDetailsPopup'
 
 export default function PerformancePage() {
-  const [selectedStrategy, setSelectedStrategy] = useState(null)
+  const [selectedStrategy, setSelectedStrategy] = useState<Strategy | null>(null)
 
   return (
     <div className="container mx-auto px-6 py-8">

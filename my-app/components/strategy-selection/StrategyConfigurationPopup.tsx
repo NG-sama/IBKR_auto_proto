@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Pie } from 'react-chartjs-2'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title, LinearScale } from 'chart.js'
+import type { Strategy } from "./AvailableStrategiesList"
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title, LinearScale)
 
@@ -27,19 +28,19 @@ const stocksData = [
   { id: '10', symbol: 'V', name: 'Visa Inc.', sector: 'Financial Services' },
 ]
 
-export default function StrategyConfigurationPopup({ strategy, onClose }) {
+export default function StrategyConfigurationPopup({ strategy, onClose }: { strategy: Strategy | null; onClose: () => void }) {
   const [stopLoss, setStopLoss] = useState(5)
   const [profitTarget, setProfitTarget] = useState(10)
   const [timeHorizon, setTimeHorizon] = useState(5)
-  const [selectedStocks, setSelectedStocks] = useState([])
-  const [sectorData, setSectorData] = useState({ labels: [], datasets: [] })
+  const [selectedStocks, setSelectedStocks] = useState<string[]>([])
+  const [sectorData, setSectorData] = useState<{ labels: string[]; datasets: { data: number[]; backgroundColor: string[] }[] }>({ labels: [], datasets: [] })
 
   useEffect(() => {
     updateSectorChart()
   }, [selectedStocks])
 
   const updateSectorChart = () => {
-    const sectorCounts = selectedStocks.reduce((acc, stockId) => {
+    const sectorCounts = selectedStocks.reduce((acc: Record<string, number>, stockId) => {
       const stock = stocksData.find(s => s.id === stockId)
       if (stock) {
         acc[stock.sector] = (acc[stock.sector] || 0) + 1
@@ -64,7 +65,7 @@ export default function StrategyConfigurationPopup({ strategy, onClose }) {
     })
   }
 
-  const handleStockToggle = (stockId) => {
+  const handleStockToggle = (stockId: string) => {
     setSelectedStocks(prev => 
       prev.includes(stockId)
         ? prev.filter(id => id !== stockId)
@@ -72,7 +73,7 @@ export default function StrategyConfigurationPopup({ strategy, onClose }) {
     )
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically send the configuration to your backend
     console.log('Strategy configured:', { 

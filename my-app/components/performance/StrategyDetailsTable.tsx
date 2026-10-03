@@ -1,8 +1,9 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import type { Strategy } from "./StrategyDetailsPopup"
 
-export default function StrategyDetailsTable({ onStrategySelect }) {
+export default function StrategyDetailsTable({ onStrategySelect }: { onStrategySelect: (strategy: Strategy) => void }) {
   const strategies = [
     {
       id: "001",

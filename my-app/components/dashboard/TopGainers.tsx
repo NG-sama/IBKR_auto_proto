@@ -12,7 +12,7 @@ export default function TopGainers() {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow">
-      <h2 className="text-xl font-semibold mb-4">Top Gainers (>5%) - Previous Trading Day</h2>
+      <h2 className="text-xl font-semibold mb-4">Top Gainers (&gt;5%) - Previous Trading Day</h2>
       <Table>
         <TableHeader>
           <TableRow>

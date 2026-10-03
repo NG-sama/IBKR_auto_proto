@@ -40,11 +40,20 @@ const initialStrategies = [
   },
 ]
 
-export default function AvailableStrategiesList({ onStrategySelect, viewMode }) {
-  const [strategies, setStrategies] = useState(initialStrategies)
-  const [editingId, setEditingId] = useState(null)
+export interface Strategy {
+  id: string
+  name: string
+  description: string
+  riskLevel: string
+  timeHorizon: string
+  performance: string
+}
 
-  const handleNameChange = (id, newName) => {
+export default function AvailableStrategiesList({ onStrategySelect, viewMode }: { onStrategySelect: (strategy: Strategy) => void; viewMode: string }) {
+  const [strategies, setStrategies] = useState(initialStrategies)
+  const [editingId, setEditingId] = useState<string | null>(null)
+
+  const handleNameChange = (id: string, newName: string) => {
     setStrategies(strategies.map(strategy => 
       strategy.id === id ? { ...strategy, name: newName } : strategy
     ))

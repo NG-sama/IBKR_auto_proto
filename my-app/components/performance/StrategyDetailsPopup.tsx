@@ -2,7 +2,18 @@ import { X } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function StrategyDetailsPopup({ strategy, onClose }) {
+export interface Strategy {
+  id: string
+  name: string
+  stocks: string
+  params: string
+  status: string
+  realizedPL: number
+  unrealizedPL: number
+  successRate: string
+}
+
+export default function StrategyDetailsPopup({ strategy, onClose }: { strategy: Strategy | null; onClose: () => void }) {
   if (!strategy) return null
 
   return (

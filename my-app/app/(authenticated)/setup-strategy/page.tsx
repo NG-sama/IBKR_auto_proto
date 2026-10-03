@@ -3,13 +3,13 @@
 import { useState } from 'react'
 import StrategySelectionHeader from '@/components/strategy-selection/StrategySelectionHeader'
 import StrategyFilters from '@/components/strategy-selection/StrategyFilters'
-import AvailableStrategiesList from '@/components/strategy-selection/AvailableStrategiesList'
+import AvailableStrategiesList, { type Strategy } from '@/components/strategy-selection/AvailableStrategiesList'
 import StrategyConfigurationPopup from '@/components/strategy-selection/StrategyConfigurationPopup'
 import CreateStrategyPopup from '@/components/strategy-selection/CreateStrategyPopup'
 import { Button } from "@/components/ui/button"
 
 export default function StrategySelectionPage() {
-  const [selectedStrategy, setSelectedStrategy] = useState(null)
+  const [selectedStrategy, setSelectedStrategy] = useState<Strategy | null>(null)
   const [isCreatingStrategy, setIsCreatingStrategy] = useState(false)
   const [viewMode, setViewMode] = useState<'block' | 'list'>('block')
 

@@ -1,5 +1,4 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 
 import TopGainers from '@/components/dashboard/TopGainers'
@@ -9,10 +8,10 @@ import PerformanceSummary from '@/components/dashboard/PerformanceSummary'
 export const dynamic = 'force-dynamic'
 
 export default async function DashboardPage() {
-  const supabase = createServerComponentClient({ cookies })
-  const { data: { session } } = await supabase.auth.getSession()
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
 
-  if (!session) {
+  if (!user) {
     redirect('/signin')
   }
 
